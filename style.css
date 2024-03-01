@@ -16,8 +16,27 @@
     vertical-align: baseline !important;
 }
 
+.rotate-drp-anchor {
+    rotate: 180deg;
+}
+
 .dropdown-menu {
     min-width: fit-content !important;
+    transition: none;
+}
+
+.offcanvas {
+    max-width: fit-content !important;
+    /* max-width: 50% !important; */
+}
+
+.offcan-dropdown {
+    width: min-content;
+}
+
+.offcan-dropdown .dropdown-menu {
+    position: relative !important;
+    transform: none !important;
 }
 
 .dropdown-item {
@@ -38,4 +57,10 @@
 
 .d-flex .nav-link {
     margin-right: 20px;
+}
+
+.c-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
 }
