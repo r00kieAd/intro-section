@@ -1,3 +1,35 @@
+
+.main {
+    font-family: "Epilogue", sans-serif !important;
+    font-optical-sizing: auto !important;
+    font-weight: 400 !important;
+    font-style: normal !important;
+    margin: 1.5rem;
+}
+
+.navbar {
+    --bs-navbar-toggler-border-color: transparent !important;
+}
+
+.btn {
+    --bs-btn-border-radius: 0.75rem !important;
+    outline: 1px solid #000000 !important;
+    --bs-btn-font-size: 0.9rem !important;
+    --bs-btn-line-height: 1.7 !important;
+    text-size-adjust: auto !important;
+}
+
+.navbar-toggler {
+    border: none !important;
+    border-radius: 0 !important;
+    transition: none !important;
+    padding: 0 !important;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+}
+
 .dropdown-toggle {
     white-space: nowrap;
 }
@@ -26,8 +58,7 @@
 }
 
 .offcanvas {
-    max-width: fit-content !important;
-    /* max-width: 50% !important; */
+    max-width: 11rem !important;
 }
 
 .offcan-dropdown {
@@ -63,4 +94,11 @@
     display: flex;
     flex-direction: column;
     align-items: start;
+}
+
+@media screen and (max-width: 700px) {
+
+    .main {
+        margin: 0.6rem 0.1rem !important;
+    }
 }
