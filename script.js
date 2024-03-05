@@ -1,45 +1,75 @@
 jQuery(document).ready(function ($) {
 
-    // features dropdown
+
+    // hide features dropdown
+    function hideFeatureDropdown() {
+        $('.features').addClass('show');
+        $('.features-dropdown .dropdown-menu').addClass('show');
+        $('.features-dropdown .dropdown-menu').attr('data-bs-popper', 'static');
+        $('.features-dropdown').fadeOut();
+        $('a.features').find('.dropdown-anchor').css('rotate', '360deg');
+        setTimeout(function () {
+            $('.features').removeClass('show');
+            $('.features-dropdown .dropdown-menu').removeClass('show');
+            $('.features-dropdown .dropdown-menu').removeAttr('data-bs-popper');
+            $('.features-dropdown').removeClass('drp-visible');
+        }, 500);
+    }
+
+    // hide company dropdown
+    function hideCompanyDropdown() {
+        $('.company').addClass('show');
+        $('.company-dropdown .dropdown-menu').addClass('show');
+        $('.company-dropdown .dropdown-menu').attr('data-bs-popper', 'static');
+        $('.company-dropdown').fadeOut();
+        $('a.company').find('.dropdown-anchor').css('rotate', '360deg');
+        setTimeout(function () {
+            $('.company').removeClass('show');
+            $('.company-dropdown .dropdown-menu').removeClass('show');
+            $('.company-dropdown .dropdown-menu').removeAttr('data-bs-popper');
+            $('.company-dropdown').removeClass('drp-visible');
+        }, 500);
+    }
+
+    // display features dropdown
     $('a.features').click(
         function () {
-
-            if ($('.company-dropdown').hasClass('drp-visible')) {
-                $('.company-dropdown').removeClass('drp-visible');
-                $('.company').find('.dropdown-anchor').css('rotate', '360deg');
-            }
-
             if ($('.features-dropdown').hasClass('drp-visible')) {
-                $('.features-dropdown').fadeOut();
-                $('.features-dropdown').removeClass('drp-visible');
-                $(this).find('.dropdown-anchor').css('rotate', '360deg');
+                hideFeatureDropdown();
             } else {
-                $('.features-dropdown').fadeIn('slow');
-                $('.features-dropdown').addClass('drp-visible');
-                $(this).find('.dropdown-anchor').css('rotate', '180deg');
+                $('.features-dropdown').hide();
+                setTimeout(function () {
+                    $('.features-dropdown').fadeIn();
+                    $('.features-dropdown').addClass('drp-visible');
+                    $('a.features').find('.dropdown-anchor').css('rotate', '180deg');
+                }, 10)
             }
         }
     )
-    
-    // company dropdown
+
+    $('a.features').blur(function () {
+        hideFeatureDropdown();
+    })
+
+    // display company dropdown
     $('a.company').click(
         function () {
-
-            if ($('.features-dropdown').hasClass('drp-visible')) {
-                $('.features-dropdown').removeClass('drp-visible');
-                $('.features').find('.dropdown-anchor').css('rotate', '360deg');
-            }
-
             if ($('.company-dropdown').hasClass('drp-visible')) {
-                $('.company-dropdown').fadeOut();
-                $('.company-dropdown').removeClass('drp-visible');
-                $(this).find('.dropdown-anchor').css('rotate', '360deg');
+                hideCompanyDropdown();
             } else {
-                $('.company-dropdown').fadeIn('slow');
-                $('.company-dropdown').addClass('drp-visible');
-                $(this).find('.dropdown-anchor').css('rotate', '180deg');
+                $('.company-dropdown').hide();
+                setTimeout(function () {
+                    $('.company-dropdown').fadeIn();
+                    $('.company-dropdown').addClass('drp-visible');
+                    $('a.company').find('.dropdown-anchor').css('rotate', '180deg');
+                }, 1);
             }
         }
+    )
+
+    $('a.company').blur(function () {
+        hideCompanyDropdown();
+    }
     )
 
 

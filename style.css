@@ -1,22 +1,60 @@
+:root {
+    --Almost-White: hsl(0, 0%, 98%);
+    --Medium-Gray: hsl(0, 0%, 41%);
+    --Almost-Black: hsl(0, 0%, 8%);
+    --Dropdown-shadow: #dadada;
+}
+
 
 .main {
     font-family: "Epilogue", sans-serif !important;
     font-optical-sizing: auto !important;
-    font-weight: 400 !important;
+    font-size: 15px !important;
     font-style: normal !important;
+    color: var(--Medium-Gray);
     margin: 1.5rem;
 }
 
 .navbar {
     --bs-navbar-toggler-border-color: transparent !important;
+    background-color: transparent !important;
 }
 
 .btn {
     --bs-btn-border-radius: 0.75rem !important;
     outline: 1px solid #000000 !important;
     --bs-btn-font-size: 0.9rem !important;
-    --bs-btn-line-height: 1.7 !important;
+    --bs-btn-line-height: 1.6 !important;
     text-size-adjust: auto !important;
+    border-color: var(--Almost-White) !important;
+    color: var(--Medium-Gray) !important;
+}
+
+.btn:hover {
+    border-color: var(--Almost-Black) !important;
+    color: var(--Almost-Black) !important;
+}
+
+.nav-link,
+.dropdown-item {
+    color: var(--Medium-Gray) !important;
+    font-weight: 600 !important;
+    margin: 0 0.3rem !important;
+}
+
+.nav-link:hover,
+.nav-item:hover {
+    color: var(--Almost-Black) !important;
+}
+
+.dropdown-item:hover,
+.dropdown-item:focus {
+    color: var(--Almost-Black) !important;
+    background-color: transparent;
+}
+
+.login {
+    margin-right: 1.8rem !important;
 }
 
 .navbar-toggler {
@@ -28,6 +66,18 @@
 
 .navbar-toggler:focus {
     box-shadow: none !important;
+}
+
+.offcanvas .dropdown-menu.show {
+    position: absolute;
+    inset: 0px auto auto 0px;
+    margin: 0px;
+    transform: traslate3d(708px, 118.5px, 0px);
+}
+
+.dropdown-menu.show {
+    border-color: var(--Almost-White);
+    box-shadow: 5px 5px 12px 1px var(--Dropdown-shadow);
 }
 
 .dropdown-toggle {
@@ -58,7 +108,7 @@
 }
 
 .offcanvas {
-    max-width: 11rem !important;
+    max-width: 11.5rem !important;
 }
 
 .offcan-dropdown {
