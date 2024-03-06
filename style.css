@@ -20,7 +20,8 @@
     background-color: transparent !important;
 }
 
-.navbar .btn, .offcanvas .btn {
+.navbar .btn,
+.offcanvas .btn {
     --bs-btn-border-radius: 0.75rem !important;
     outline: 1px solid #000000 !important;
     --bs-btn-font-size: 0.9rem !important;
@@ -30,7 +31,8 @@
     color: var(--Medium-Gray) !important;
 }
 
-.navbar .btn:hover, .offcanvas .btn:hover {
+.navbar .btn:hover,
+.offcanvas .btn:hover {
     border-color: var(--Almost-Black) !important;
     color: var(--Almost-Black) !important;
 }
@@ -147,20 +149,18 @@
 }
 
 .content {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 2% 5%;
-    height: 100vh;
-    /* border: 1px solid black; */
+    margin: 2%;
 }
 
 .text-content {
-    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
-#paragraph, #learn-more-button, #clients {
+#paragraph,
+#learn-more-button,
+#clients {
     margin-top: 5%;
 }
 
@@ -198,26 +198,75 @@
 #clients {
     position: relative;
     display: flex;
-    justify-content: space-evenly;
+    width: 80%;
+    justify-content: space-between;
     align-items: center;
 }
 
 .image-hero {
-    width: fit-content;
-    height: 90%;
-    /* border: 1px solid red; */
-}
-
-.image-hero img {
-    width: 100%;
+    display: inline;
     height: 100%;
 }
 
+.image-hero img {
+    float: right;
+    max-width: 25rem;
+}
 
+@media screen and (max-width: 1200px) {
 
-@media screen and (max-width: 700px) {
+    .content {
+        margin: 2% 0;
+        /* width: 30rem; */
+    }
+
+    #heading h1 {
+        font-size: 70px !important;
+        line-height: 0.9;
+    }
+
+    #paragraph {
+        font-size: 15px;
+        width: fit-content;
+    }
+
+    .image-hero img {
+        float: right;
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 768px) {
 
     .main {
         margin: 0.6rem 0.1rem !important;
+    }
+
+    .content {
+        display: flex !important;
+        flex-direction: column-reverse !important;
+    }
+
+    #heading h1 {
+        font-size: 50px !important;
+        line-height: 1.2;
+    }
+
+    #clients {
+        margin-top: 10%;
+        width: 100%;
+        justify-content: space-around;
+    }
+
+    .client {
+        width: 20%;
+    }
+
+    .image-hero img {
+        float: none;
+        max-width: 100%;
+        max-height: 100%;
+        margin-bottom: 10%;
     }
 }
