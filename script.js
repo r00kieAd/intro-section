@@ -1,6 +1,5 @@
 jQuery(document).ready(function ($) {
 
-
     // hide features dropdown
     function hideFeatureDropdown() {
         $('.features').addClass('show');
