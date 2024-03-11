@@ -5,6 +5,9 @@
     --Dropdown-shadow: #dadada;
 }
 
+body {
+    background-color: var(--Almost-White);
+}
 
 .main {
     font-family: "Epilogue", sans-serif !important;
